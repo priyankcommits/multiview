@@ -26,7 +26,8 @@ SECRET_KEY = '3ww6f94pz40xz)^ue6+qa!ha=(6t54$t&*w_#0qd8*#+anr7nq'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'calm-dusk-53690.herokuapp.com'
+    'localhost',
+    'calm-dusk-53690.herokuapp.com',
 ]
 
 
