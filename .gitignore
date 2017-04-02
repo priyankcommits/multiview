@@ -4,3 +4,4 @@ temp_images
 temp_images/*
 media/
 media/*
+*.sqlite3
