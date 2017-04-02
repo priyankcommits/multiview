@@ -10,7 +10,9 @@
     <link rel="icon" href="{% static "images/favicon.ico" %}">
     <title>MultiView</title>
 
-    <link href="{% static 'js/materialize/css/materialize.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/materialize.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/material.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/dataTables.material.min.css' %}" rel="stylesheet" >
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Custom styling plus plugins -->
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
@@ -52,6 +54,10 @@
         </div>
       </div>
       <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+      <script src="{% static 'js/materialize.min.js' %}"></script>
+      <script src="{% static 'js/jquery.dataTables.min.js' %}"></script>
+      <script src="{% static 'js/dataTables.material.min.js' %}"></script>
+      <script src="{% static 'js/main.js' %}"></script>
     </body>
 </html>
 
