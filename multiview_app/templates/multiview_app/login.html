@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="saam" class="no-js">
+  {% load staticfiles %}
+
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{% static "images/favicon.ico" %}">
+    <title>MultiView</title>
+
+    <link href="{% static 'js/materialize/css/materialize.min.css' %}" rel="stylesheet">
+    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Custom styling plus plugins -->
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+  </head>
+  <body>
+    <body class="grey lighten-2">
+      <nav>
+        <div class="nav-wrapper blue darken-1">
+          <a href="#" id="title-text" class="c-no-pointer center brand-logo">MultiView</a>
+        </div>
+      </nav>
+      <div class="row">
+        <div class="col s4">
+        </div>
+        <div class="card col s4 c-padding-bottom-10" id="main-page">
+          <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="input-field col s12">
+              {{ form.username }}
+              <label class="active" for="username">Username</label>
+            </div>
+            <div class="input-field col s12">
+              {{ form.password }}
+              <label class="active" for="password">Password</label>
+            </div>
+            {% if form.errors %}
+            {% for title, value in form.errors.items %}
+            <div class="input-field col s12 red-text">
+              {{ value }}
+            </div>
+            {% endfor %}
+            {% endif %}
+            <div class="input-field col s12">
+              <input class="btn red" type="submit" value="Login" />
+            </div>
+          </form>
+        </div>
+        <div class="col s4">
+        </div>
+      </div>
+      <script src="//code.jquery.com/jquery-2.2.4.min.js"></script>
+    </body>
+</html>
+

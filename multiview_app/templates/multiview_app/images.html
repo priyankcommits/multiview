@@ -1,0 +1,43 @@
+{% extends 'multiview_app/base.html' %}
+{% block content %}
+<div class="row">
+  <div class="card col s4">
+    <h5> View  all images </h5>
+  </div>
+  <div class="col s8">
+  </div>
+</div>
+{% if images %}
+<table class="mdl-data-table" cellspacing="0" width="100%" id="data-table">
+  <thead>
+    <tr>
+      <th class="mdl-data-table__cell--non-numeric">
+        Image
+      </th>
+      <th class="mdl-data-table__cell--non-numeric">
+        Image Name
+      </th>
+      <th>
+        Uploaded By
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for image in images %}
+    <tr>
+      <td  class="mdl-data-table__cell--non-numeric">
+        <img src="/media/{{image.image}}" height="50" widht="50"/>
+      </td>
+      <td  class="mdl-data-table__cell--non-numeric">
+        {{image.name}}
+      </td>
+      <td>
+        {{ image.uploaded_by }}
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+{% endblock %}
+

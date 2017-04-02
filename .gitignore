@@ -1,0 +1,6 @@
+*.pyc
+*.DS_STORE
+temp_images
+temp_images/*
+media/
+media/*

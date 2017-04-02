@@ -1,0 +1,41 @@
+{% extends 'multiview_app/base.html' %}
+{% block content %}
+<div class="row">
+  <div class="card col s4">
+    <h5> Upload an image </h5>
+  </div>
+  <div class="col s8">
+  </div>
+</div>
+<div class="row">
+  <div class="card col s4 c-padding-bottom-10">
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="col s12" id="image-upload">
+        <div class="file-field input-field">
+          <div class="btn btn-fab red">
+            <i class="material-icons">add</i>
+            {{ form.image }}
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" placeholder="Upload an Image">
+          </div>
+        </div>
+      </div>
+      {% if form.errors %}
+      {% for title, value in form.errors.items %}
+      <div class="input-field col s12 red-text">
+        {{ value }}
+      </div>
+      {% endfor %}
+      {% endif %}
+      <div class="input-field col s12">
+        <input class="btn red" type="submit" value="Upload" />
+      </div>
+    </form>
+  </div>
+  <div class="col s8">
+  </div>
+</div>
+{% endblock %}
+
